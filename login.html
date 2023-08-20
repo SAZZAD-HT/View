@@ -1,263 +1,99 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <title>Login Page</title>
-  <style>
-    /* Default styles */
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Sign Up Form by Colorlib</title>
 
-    html {
-        height: 100%;
-    }
+    <!-- Font Icon -->
+    <link rel="stylesheet" href="fonts/material-icon/css/material-design-iconic-font.min.css">
 
-    body {
-        margin: 0;
-        padding: 0;
-        font-family: sans-serif;
-        background: linear-gradient(#141e30, #243b55);
-    }
-
-    .login-box {
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        width: 400px;
-        padding: 40px;
-        transform: translate(-50%, -50%);
-        background: rgba(0, 0, 0, .5);
-        box-sizing: border-box;
-        box-shadow: 0 15px 25px rgba(0, 0, 0, .6);
-        border-radius: 10px;
-    }
-
-    .login-box h2 {
-        margin: 0 0 30px;
-        padding: 0;
-        color: #fff;
-        text-align: center;
-    }
-
-    .login-box .user-box {
-        position: relative;
-    }
-
-    .login-box .user-box input {
-        width: 100%;
-        padding: 10px 0;
-        font-size: 16px;
-        color: #fff;
-        margin-bottom: 30px;
-        border: none;
-        border-bottom: 1px solid #fff;
-        outline: none;
-        background: transparent;
-    }
-
-    .login-box .user-box label {
-        position: absolute;
-        top: 0;
-        left: 0;
-        padding: 10px 0;
-        font-size: 16px;
-        color: #fff;
-        pointer-events: none;
-        transition: .5s;
-    }
-
-    .login-box .user-box input:focus ~ label,
-    .login-box .user-box input:valid ~ label {
-        top: -20px;
-        left: 0;
-        color: #03e9f4;
-        font-size: 12px;
-    }
-
-    .login-box form a {
-        position: relative;
-        display: inline-block;
-        padding: 10px 20px;
-        color: #03e9f4;
-        font-size: 16px;
-        text-decoration: none;
-        text-transform: uppercase;
-        overflow: hidden;
-        transition: .5s;
-        margin-top: 40px;
-        letter-spacing: 4px
-    }
-
-    .login-box a:hover {
-        background: #03e9f4;
-        color: #fff;
-        border-radius: 5px;
-        box-shadow: 0 0 5px #03e9f4, 0 0 25px #03e9f4, 0 0 50px #03e9f4, 0 0 100px #03e9f4;
-    }
-
-    .login-box a span {
-        position: absolute;
-        display: block;
-    }
-
-    .login-box a span:nth-child(1) {
-        top: 0;
-        left: -100%;
-        width: 100%;
-        height: 2px;
-        background: linear-gradient(90deg, transparent, #03e9f4);
-        animation: btn-anim1 1s linear infinite;
-    }
-
-    @keyframes btn-anim1 {
-        0% {
-            left: -100%;
-        }
-
-        50%, 100% {
-            left: 100%;
-        }
-    }
-
-    .login-box a span:nth-child(2) {
-        top: -100%;
-        right: 0;
-        width: 2px;
-        height: 100%;
-        background: linear-gradient(180deg, transparent, #03e9f4);
-    }
-
-    .login-box:before {
-        content: '';
-        position: absolute;
-        top: -20px;
-        left: -20px;
-        width: calc(100% + 40px);
-        height: calc(100% + 40px);
-        background: radial-gradient(circle at center, #03e9f4 0%, transparent 70%);
-        animation: pulse 2s linear infinite;
-        opacity: 0;
-        z-index: -1;
-        border-radius: 10px;
-    }
-
-    @keyframes pulse {
-        0% {
-            transform: scale(0.5);
-            opacity: 0.5;
-        }
-
-        50% {
-            transform: scale(1);
-            opacity: 0.2;
-        }
-
-        100% {
-            transform: scale(1.5);
-            opacity: 0;
-        }
-    }
-
-  </style>
+    <!-- Main CSS -->
+    <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-  <div class="login-box">
-    <h2>Login</h2>
-    <form>
-      <div class="user-box">
-        <input type="text" id="email" name="email" required="">
-        <label>Email</label>
-      </div>
-      <div class="user-box">
-        <input type="password" id="password" name="password" required="">
-        <label>Password</label>
-      </div>
+    <div class="main">
+        <!-- Sign-in Form -->
+        <section class="sign-in">
+            <div class="container">
+                <div class="signin-content">
+                    <div class="signin-image">
+                        <figure><img src="images/signin-image.jpg" alt="sign up image"></figure>
+                        <a href="./Signup.html" class="signup-image-link">Create an account</a>
+                    </div>
 
-      <a href="#">
-        <span></span>
-        <span></span>
-        <span></span>
-        <span></span>
-        <button type="button" onclick="loginUser()">Login</button>
-      </a>
-    </form>
-  </div>
+                    <div class="signin-form">
+                        <h2 class="form-title">Sign in</h2>
+                        <form method="POST" class="register-form" id="login-form">
+                            <div class="form-group">
+                                <label for="email"><i class="zmdi zmdi-account material-icons-name"></i></label>
+                                <input type="text" name="your_email" id="email" placeholder="Your Email"/>
+                            </div>
+                            <div class="form-group">
+                                <label for="password"><i class="zmdi zmdi-lock"></i></label>
+                                <input type="password" name="your_password" id="password" placeholder="Password"/>
+                            </div>
+                            <div class="form-group">
+                                <input type="checkbox" name="remember-me" id="remember-me" class="agree-term" />
+                                <label for="remember-me" class="label-agree-term"><span><span></span></span>Remember me</label>
+                            </div>
+                            <div class="form-group form-button">
+                                <input type="button" name="signin" id="signin" class="form-submit" onclick="loginUser()" value="Log in"/>
+                            </div>
+                        </form>
+                        <div class="social-login">
+                            <span class="social-label">Or login with</span>
+                            <ul class="socials">
+                                <li><a href="#"><i class="display-flex-center zmdi zmdi-facebook"></i></a></li>
+                                <li><a href="#"><i class="display-flex-center zmdi zmdi-twitter"></i></a></li>
+                                <li><a href="#"><i class="display-flex-center zmdi zmdi-google"></i></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
 
-  <script>
-    async function loginUser() {
-      const UserEmail = document.getElementById('email').value;
-      const UserPassword = document.getElementById('password').value;
+    <script>
+        async function loginUser() {
+            const userEmail = document.getElementById('email').value;
+            const userPassword = document.getElementById('password').value;
 
-      const data = {
-        UserEmail,
-        UserPassword
-      };
+            const data = {
+                UserEmail: userEmail,
+                UserPassword: userPassword
+            };
 
-      const response = await fetch('http://localhost:3000/user/signin', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(data),
-      });
+            const response = await fetch('http://localhost:3000/user/signin', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(data),
+            });
 
-      if (response.ok) { 
-        const responseData = await response.json(); // Parse the response body as JSON
-    console.log(responseData);
-             alert('Logged in successfully');
-       
-        console.log(responseData.Role+"response");
-          
- 
-        if(responseData.Role == 'admin'){ 
-          alert('Logged in successfully'+response);
-          window.location.href = './adminHomej.html'}
-        else if(responseData.Role == 'user'){
-          alert('Logged in successfully'+responseData.Role);
-          window.location.href = 'http://localhost:5173/'
+            if (response.ok) {
+                const responseData = await response.json();
+                alert('Logged in successfully');
 
-        }else{
-          alert('PAGE IS UNDER CONSTRUCTION'+responseData.Role);
-          window.location.href = './index.html'
-
+                if (responseData.Role === 'admin') {
+                    window.location.href = './adminHomej.html';
+                } else if (responseData.Role === 'user') {
+                    window.location.href = 'http://localhost:5173/';
+                } else {
+                    alert('PAGE IS UNDER CONSTRUCTION');
+                    window.location.href = './index.html';
+                }
+            } else {
+                alert('Failed to log in');
+            }
         }
-       
-      } else {
-        alert('Failed to log in');
-      }
-    }
-async function loginUser1() {
-    const data = {
-  UserEmail: document.getElementById('email').value,
-  UserPassword: document.getElementById('password').value,
-};
-const headers = {
-  'Content-Type': 'application/json',
-};
+    </script>
 
-// Add your cookie information to the headers object
-headers['Cookie'] = 'your-cookie-name=your-cookie-value'
-fetch('http://localhost:3002/user/signin', {
-  method: 'POST',
-  headers: {
-    'Content-Type': 'application/json',
-  },
-  body: JSON.stringify(data),
- 
-})
-  .then(response => {
-    if (response.ok) {
-      return response.json();
-    } else {
-      throw new Error('Failed to sign in');
-    }
-  })
-  .then(data => {
-    console.log('Sign in successful:', data);
-    // Perform any further actions after successful sign in
-  })
-  .catch(error => {
-    console.error('Sign in failed:', error);
-    // Handle sign in error
-  });
-}
-  </script>
+    <!-- JS -->
+    <script src="vendor/jquery/jquery.min.js"></script>
+    <script src="js/main.js"></script>
 </body>
 </html>

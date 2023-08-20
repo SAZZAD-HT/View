@@ -251,17 +251,66 @@
         <section class="overview">
             <div class="box">
                 <h3>Total Products</h3>
-                <p>356</p>
+                <p id="totalProduct">Fetching</p>
             </div>
             <div class="box">
-                <h3>Total Orders</h3>
-                <p>128</p>
+                <h3>Total Sells</h3>
+                <p id="totalSells" > Fetching </p>
             </div>
             <div class="box">
                 <h3>Total Customers</h3>
-                <p>246</p>
+                <p id="total-Customer">Fetching</p>
             </div>
         </section>
+        <script>
+            // Function to fetch and update Total Products
+function fetchTotalProducts() {
+    fetch('http://localhost:3000/sells/total-products')
+        .then(response => response.json())
+        .then(data => {
+            console.log(data)
+            const totalProductElement = document.getElementById('totalProduct');
+            totalProductElement.innerText = data;
+        })
+        .catch(error => {
+            console.error('Error fetching Total Products:', error);
+        });
+}
+
+// Function to fetch and update Total Sells
+function fetchTotalSells() {
+    fetch('http://localhost:3000/sells/total-selled')
+        .then(response => response.json())
+        .then(data => {
+            const totalSellsElement = document.getElementById('totalSells');
+            totalSellsElement.innerText = data;
+        })
+        .catch(error => {
+            console.error('Error fetching Total Sells:', error);
+        });
+}
+
+// Function to fetch and update Total Customers
+function fetchTotalCustomers() {
+    fetch('http://localhost:3000/sells/total-Customer')
+        .then(response => response.json())
+        .then(data => {
+            const totalCustomerElement = document.getElementById('total-Customer');
+            totalCustomerElement.innerText = data;
+        })
+        .catch(error => {
+            console.error('Error fetching Total Customers:', error);
+        });
+}
+
+// Call the functions to fetch and update data on page load
+document.addEventListener('DOMContentLoaded', function () {
+    fetchTotalProducts();
+    fetchTotalSells();
+    fetchTotalCustomers();
+});
+
+        </script>
 
         <section class="recent-orders">
             <h2>Recent Orders</h2>
